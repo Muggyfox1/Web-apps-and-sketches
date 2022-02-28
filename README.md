@@ -1,2 +1,2 @@
 # Apps made with HTML, CSS, JavaScript(HCJ).
-A repo for apps I made using HTML, CSS, and Javascript.
+A repo for web apps/sketches I made using HTML, CSS, and Javascript.
