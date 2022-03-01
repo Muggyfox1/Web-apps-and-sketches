@@ -7,15 +7,27 @@ body{
 
 header{
     display: flex;
-    height: 1.5em;
-    background-color: black;
+    justify-content: center;
+    height:fit-content;
+    background: linear-gradient(black, black, transparent);
 }
 
 header a{
+    font-size: 2em;
     display: block;
-    background-color: grey;
+    padding: 5px;
+    margin:3px 2em;
+    background-color: transparent;
+    border-radius: 0px;
+    transition: background-color 1s, border-radius 2s;
 }
 
 header a:hover{
-    background-color: white;
+    background-color: grey;
+    border-radius:15px;
+
+}
+
+.footer{
+    background: linear-gradient(transparent, black, black);
 }
