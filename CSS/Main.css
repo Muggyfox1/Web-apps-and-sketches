@@ -3,6 +3,7 @@
 }
 body{
     margin: 0;
+    background-color: darkblue;
 }
 
 header{
@@ -12,22 +13,25 @@ header{
     background: linear-gradient(black, black, transparent);
 }
 
-header a{
+footer{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background: linear-gradient(transparent, black, black);
+}
+
+header a, ul a{
     font-size: 2em;
     display: block;
     padding: 5px;
     margin:3px 2em;
     background-color: transparent;
     border-radius: 0px;
-    transition: background-color 1s, border-radius 2s;
+    transition: color 1s, background-color 1s, border-radius 2s;
 }
 
-header a:hover{
-    background-color: grey;
+header a:hover, ul a:hover{
+    color:darkorange;
+    background-color: #ffffff50;
     border-radius:15px;
-
-}
-
-.footer{
-    background: linear-gradient(transparent, black, black);
 }
