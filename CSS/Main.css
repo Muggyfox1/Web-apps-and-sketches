@@ -9,6 +9,7 @@ body{
 header{
     display: flex;
     justify-content: center;
+    min-height: 3em;
     height:fit-content;
     background: linear-gradient(black, black, transparent);
 }
@@ -23,6 +24,7 @@ footer{
 header a, ul a{
     font-size: 2em;
     display: block;
+    text-align: center;
     padding: 5px;
     margin:3px 2em;
     background-color: transparent;
