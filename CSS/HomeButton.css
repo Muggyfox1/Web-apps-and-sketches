@@ -1,0 +1,17 @@
+.HomeButton{
+    display:block;
+    color: black;
+    background-color: darkgray;
+    border-radius: 15px;
+    width: fit-content;
+    padding: 1em;
+    transition:color 1s, background-color 1s;
+    position: fixed;
+    top: 1em;
+    left: 1em;
+}
+
+.HomeButton:hover{
+    color: white;
+    background-color: black;
+}
