@@ -1,18 +1,24 @@
 //Variables
 let c = document.querySelector("#c");
 let ctx = c.getContext("2d");
-updateCanvas()
+updateCanvas();
 
 let mousePosition = {"x":0,"y":0};
 let DRAW_INTERVAL = 10;
 
 let particles = [];
-particles.push(Particle("red",10));
-particles.push(Particle("blue",9));
-particles.push(Particle("green",8));
-particles.push(Particle("yellow",6));
-particles.push(Particle("cyan",5));
-particles.push(Particle("purple",4));
+particles.push(Particle("red", Math.random() * 10));
+particles.push(Particle("blue", Math.random() * 10));
+particles.push(Particle("green", Math.random() * 10));
+particles.push(Particle("yellow", Math.random() * 10));
+particles.push(Particle("cyan", Math.random() * 10));
+particles.push(Particle("purple", Math.random() * 10));
+particles.push(Particle("red", Math.random() * 10));
+particles.push(Particle("blue", Math.random() * 10));
+particles.push(Particle("green", Math.random() * 10));
+particles.push(Particle("yellow", Math.random() * 10));
+particles.push(Particle("cyan", Math.random() * 10));
+particles.push(Particle("purple", Math.random() * 10));
 
 
 //Set up functions
@@ -22,7 +28,7 @@ c.addEventListener("mousemove",updateMouse);
 //Functions
 function drawFrame(){
     //update width and height of canvas
-    updateCanvas()
+    updateCanvas();
 
     //draw background
     ctx.fillStyle = "black";
@@ -31,14 +37,14 @@ function drawFrame(){
     //update and draw particles
     for (let i = 0; i < particles.length; i++) {
         p = particles[i];
-        updateParticle(p, i)
+        updateParticle(p)
         drawParticle(p);
     }
 
-    // particles.forEach(p => {
-    //     updateParticle(p);
-    //     drawParticle(p);
-    // });
+    particles.forEach(p => {
+        updateParticle(p);
+        drawParticle(p);
+    });
 
 }
 
@@ -70,20 +76,13 @@ function Particle(color, startSize){
 }
 
 function updateParticle(p, i){
-    if(i == 0){
-        p.position = {x: p.position.x - (p.position.x - mousePosition.x)/10,
-            y: p.position.y - (p.position.y - mousePosition.y)/10};
-    } else{
-        p.position = {x: p.position.x - (p.position.x - particles[i - 1].position.x)/10,
-            y: p.position.y - (p.position.y - particles[i - 1].position.y)/10};
+    let changeValue = .025;
+    p.size -= p.shrinking? -changeValue: changeValue;
+    if(p.size <= 0 || p.size >= 10){
+        p.shrinking = !p.shrinking;
     }
 
-    let changeValue = .1;
-    //p.size -= p.shrinking? -changeValue: changeValue;
-    if(p.size <= 0 || p.size >= 10){
-        if(!p.shrinking){
-            p.position = (mousePosition - p.position)/2;
-        }
-        p.shrinking = !p.shrinking;
+    if(p.size <= 0){
+        p.position = {x:Math.random() * c.width, y:Math.random() * c.height};
     }
 }
