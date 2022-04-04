@@ -1,13 +1,6 @@
-h1 {
-    padding-top:40vh;
-    color:white;
-    outline:1px;
-    text-align:center;
-  }
-  
   #c{
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:-1;
-  }
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+}

@@ -35,11 +35,6 @@ function drawFrame(){
     ctx.fillRect(0, 0, c.width + 10, c.height + 10); //+ 10 because of white edges that may appear.
     
     //update and draw particles
-    for (let i = 0; i < particles.length; i++) {
-        p = particles[i];
-        updateParticle(p)
-        drawParticle(p);
-    }
 
     particles.forEach(p => {
         updateParticle(p);
@@ -59,12 +54,14 @@ function updateMouse(e){
 }
 
 function drawParticle(p){
-    ctx.beginPath();
-    ctx.fillStyle = p.color;
-    ctx.ellipse(p.position.x, p.position.y, 
-                p.size, p.size,
-                0, 0, 2*Math.PI);
-    ctx.fill();
+    if(p.size > 0){
+        ctx.beginPath();
+        ctx.fillStyle = p.color;
+        ctx.ellipse(p.position.x, p.position.y, 
+                    p.size, p.size,
+                    0, 0, 2*Math.PI);
+        ctx.fill();
+    }
 }
 
 //Particle methods
