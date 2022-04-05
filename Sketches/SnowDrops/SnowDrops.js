@@ -60,7 +60,7 @@ function drawParticle(p){
 function Particle(){
     return {size:Math.random() * 7.5, 
             position:{x:Math.random() * c.width, y:Math.random() * c.height},
-            speed:Math.random() / 2
+            speed:(Math.random() + 0.5) / 2
         };
 }
 
