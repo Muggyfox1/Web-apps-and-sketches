@@ -1,7 +1,7 @@
 function createSourceButton(url, kindOfSource){
     let styleLink = document.createElement("link");
     styleLink.rel = "stylesheet";
-    styleLink.href = "/CSS/SourceButton.css";
+    styleLink.href = "../../CSS/SourceButton.css";
     document.querySelector("head").appendChild(styleLink);
     
     let SourceButton = document.createElement("a");
