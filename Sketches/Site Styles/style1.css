@@ -1,3 +1,56 @@
-*{
-    color:blue;
+body{
+    margin:0;
+    background:linear-gradient(125deg, White,Black);
+}
+
+nav{
+    position: sticky;
+    top: 0;
+    background-color: black;
+    width: 100%;
+    height: fit-content;    
+    height: 2em;
+    display: flex;
+    align-items: center;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 90%;
+}
+
+nav img{
+    height: 2em;
+    width: 2em;
+}
+
+nav ul a, nav img{
+    margin-right: 3em;
+}
+
+nav ul a{
+    color: white;
+    background-color: transparent;
+    border-radius: 0px;
+    padding: 1em;
+    transition: border-radius 1s, background-color 1s, color 1s;
+}
+
+nav ul a:hover{
+    color: black;
+    background-color: white;
+    border-radius: 30px;
+}
+
+section{
+    margin:1em;
+    padding: 1em;
+    background-color: #eeeeee50;
+    border-radius: 15px;
+}
+
+h1, h2{
+    border-bottom: black 1px solid;
 }
